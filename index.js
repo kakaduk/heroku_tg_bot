@@ -20,7 +20,7 @@ app.get("/telegram/:pageName:pageExt", function(request, response){
 app.get("/contact", function(request, response){
     response.send("<h1>Контакты</h1>");
 });
-var port = 443;
+var port = 80;
 var server = app.listen(port, function () {
   var host = server.address().address;
   
