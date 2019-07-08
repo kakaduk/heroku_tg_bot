@@ -12,7 +12,7 @@ app.get("/", function(request, response){
 app.get("/telegram/:pageName:pageExt", function(request, response){
     let pageName = request.params["pageName"];
     let pageExt = request.params["pageExt"];
-    bot.sendMessage(821965270, 'Hello ' + pageName + '!' + pageExt).then(function () {
+    bot.sendMessage(821965270, pageName + ' ' + pageExt).then(function () {
         // reply sent!
       });
     response.send(`Запрошенный файл: ${pageName}.${pageExt}`);
