@@ -18,9 +18,9 @@ app.get("/telegram/:pageName:pageExt", function(request, response){
     response.send(`Запрошенный файл: ${pageName}.${pageExt}`);
 });
 app.get("/contact", function(request, response){
-    response.send("<h1>Контакты</h1>");
+    response.send("<h1>Контакты!!</h1>");
 });
-var port =process.env.PORT ||  80;
+var port = 443;
 var server = app.listen(port, function () {
   var host = server.address().address;
   
