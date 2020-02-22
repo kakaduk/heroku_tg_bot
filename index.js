@@ -37,7 +37,7 @@ var server = app.listen(port, function () {
 });
 
 bot.on('message', msg => {
-  bot.sendMessage(msg.chat.id,'Здорова ,' + msg.from.first_name + '! Че надо?')
+  bot.sendMessage(msg.chat.id,'Здорова, ' + msg.from.first_name + '! Че надо?')
 });
 //require('http').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
 //  res.end('')
