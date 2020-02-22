@@ -16,6 +16,15 @@ app.get("/telegram/:pageName:pageExt", function(request, response){
       });
     response.send(`Запрошенный файл: ${pageName}.${pageExt}`);
 });
+app.get("/telegram2/:Id:pageName:pageExt", function(request, response){
+  let Id = request.params["Id"];
+  let pageName2 = request.params["pageName"];
+  let pageExt2 = request.params["pageExt"];
+  bot.sendMessage(Id, pageName2 + ' ' + pageExt2).then(function () {
+      // reply sent!
+    });
+  response.send(`Запрошенный файл: ${pageName}.${pageExt}`);
+});
 app.get("/contact", function(request, response){
     response.send("<h1>Контакты</h1>");
 });
@@ -28,7 +37,7 @@ var server = app.listen(port, function () {
 });
 
 bot.on('message', msg => {
-  bot.sendMessage(msg.chat.id,'Hello, bot says: Hi, ' + msg.from.first_name)
+  bot.sendMessage(msg.chat.id,'Здорова ,' + msg.from.first_name + '! Че надо?')
 });
 //require('http').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
 //  res.end('')
