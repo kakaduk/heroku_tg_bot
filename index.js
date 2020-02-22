@@ -27,3 +27,4 @@ var server = app.listen(port, function () {
 
   console.log('Web server started at http://%s:%s', host, port);
 });
+bot.on('message', msg=>{bot.sendMessage(msg.chat.id,'Hello, bot says: "Hi, ${msg.from.first_name}"')});
