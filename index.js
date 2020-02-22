@@ -1,11 +1,10 @@
 var express = require('express');
 var token = '690558991:AAEATIOm04wGsvPKWRfv0T6KWQE5YJ6JLg4';
 var Bot = require('node-telegram-bot-api');
-var bot = new Bot(token);
-
+var bot = new Bot(token, {polling: true});
 var app = express();
 app.get("/", function(request, response){
-    response.send("<h1>Главная страница</h1>");
+    response.send("<h1>Главная страница+</h1>");
     console.log('Web server response %s  %s', req.ip, response.ip);
     //res.json({ version: packageInfo.version });
 });
@@ -18,7 +17,7 @@ app.get("/telegram/:pageName:pageExt", function(request, response){
     response.send(`Запрошенный файл: ${pageName}.${pageExt}`);
 });
 app.get("/contact", function(request, response){
-    response.send("<h1>Контакты!!</h1>");
+    response.send("<h1>Контакты</h1>");
 });
 var port = process.env.PORT ||  80;
 var server = app.listen(port, function () {
@@ -27,4 +26,6 @@ var server = app.listen(port, function () {
 
   console.log('Web server started at http://%s:%s', host, port);
 });
-bot.on('message', msg=>{bot.sendMessage(msg.chat.id,'Hello, bot says: "Hi, ${msg.from.first_name}"')});
+bot.on('message', msg => {
+  bot.sendMessage(msg.chat.id,'Hello, bot says: "Hi, ${msg.from.first_name}"')
+});
