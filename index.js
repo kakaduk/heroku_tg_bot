@@ -30,6 +30,6 @@ var server = app.listen(port, function () {
 bot.on('message', msg => {
   bot.sendMessage(msg.chat.id,'Hello, bot says: Hi, ' + msg.from.first_name)
 });
-require('http').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
-  res.end('')
-})
+//require('http').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+//  res.end('')
+//})
